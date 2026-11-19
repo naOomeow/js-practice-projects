@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task List</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -18,10 +18,10 @@
             </div>
             <div id="inputBox">
                 <div id="input">
-                    <input type="text" placeholder="Add Item">
+                    <input id="input-out" type="text" placeholder="Add Item" >
                 </div>
                 <div id="submit">
-                    <button>Add</button>
+                    <button id="submitBtn">Add</button>
                 </div>
             </div>
             <div id="listBox">
