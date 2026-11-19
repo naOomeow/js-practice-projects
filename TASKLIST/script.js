@@ -4,6 +4,8 @@ const listBox = document.querySelector(`#listBox`);
 
 
 submitButton.addEventListener(`click`, () => {
+    input.value = input.value.trim();
+
     if (input.value !== undefined && input.value !== ``) {
         createListItem(); 
         input.value = ``;
@@ -13,22 +15,8 @@ submitButton.addEventListener(`click`, () => {
     
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function createListItem() {
-
+    
     const div = document.createElement(`div`);
         div.classList.add(`listItem`);
     listBox.appendChild(div);
