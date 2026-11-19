@@ -105,7 +105,8 @@ main{
 
 .listItem{
     width: 90%;
-    height: 20%;
+    height: 70px;
+    min-height: 70px;
     background-color: rgba(240, 248, 255, 0.554);
     border-radius: 5px;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.259);
@@ -119,12 +120,15 @@ main{
     gap: 10px;
 }
 
+.list{
+    margin: 0;
+}
+
 .textDiv{
     width: 90%;
     margin-left: 20px;
     height: 50%;
     align-content: center;
-    
 }
 
 .buttonsDiv{

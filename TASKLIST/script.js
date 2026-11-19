@@ -25,7 +25,7 @@ function createListItem() {
         textDiv.classList.add(`textDiv`);
         div.appendChild(textDiv);
         
-    const inputText = document.createElement(`li`);
+    const inputText = document.createElement(`p`);
         inputText.classList.add(`list`);
         inputText.textContent = input.value ;
         textDiv.appendChild(inputText);
