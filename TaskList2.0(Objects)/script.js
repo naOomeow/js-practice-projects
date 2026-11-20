@@ -18,22 +18,26 @@ function inputNormaliser() {
     return taskInput.value.trim();
 };
 
+function remove() {
+    console.log(`removing`);
+};
+
+function createDelBtn(i) {
+    const delBtn = document.createElement(`button`);
+        delBtn.innerText = `Delete`;
+        delBtn.setAttribute(`id`, `${tasks[i].id}`);
+    delBtn.addEventListener(`click`, remove)
+    return delBtn;
+}
+
 function renderTasks() {
     taskList.innerText = ``;
     for (let i = 0; i < tasks.length; i++){
         const li = document.createElement(`li`);
         li.setAttribute(`id`, `li${tasks[i].id}`)
         li.innerText = `${tasks[i].text}`;
-        
-        const delBtn = document.createElement(`button`);
-        delBtn.innerText = `Delete`;
-        delBtn.setAttribute(`id`, `btn${tasks[i].id}`);
-        delBtn.addEventListener(`click`, (e) => {
-            console.log(`deleting`);
-        });
-
         taskList.appendChild(li);
-        li.appendChild(delBtn);
+        li.appendChild(createDelBtn(i));
     };
 };
 
