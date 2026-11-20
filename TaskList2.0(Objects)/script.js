@@ -3,8 +3,7 @@ const addTask = document.querySelector(`#addTask`);
 const taskList = document.querySelector(`#taskList`);
 
 const tasks = [
-    { id: 1, text: "Study JavaScript", completed: false },
-    { id: 2, text: "Practice DOM", completed: true }
+
 ];
 
 function newTask(text) {
@@ -19,11 +18,31 @@ function inputNormaliser() {
     return taskInput.value.trim();
 };
 
+function renderTasks() {
+    taskList.innerText = ``;
+    for (let i = 0; i < tasks.length; i++){
+        const li = document.createElement(`li`);
+        li.setAttribute(`id`, `li${tasks[i].id}`)
+        li.innerText = `${tasks[i].text}`;
+        
+        const delBtn = document.createElement(`button`);
+        delBtn.innerText = `Delete`;
+        delBtn.setAttribute(`id`, `delete-${tasks[i].id}`);
+
+        taskList.appendChild(li);
+        li.appendChild(delBtn);
+    };
+};
+
 addTask.addEventListener(`click`, () => {
     inputNormaliser();
     if (inputNormaliser() !== ``) {
         newTask(inputNormaliser());
         console.log(tasks);
     };
+    taskInput.value = ``;
+    renderTasks();
 });
+
+
 
