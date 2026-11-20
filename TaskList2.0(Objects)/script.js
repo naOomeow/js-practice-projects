@@ -6,12 +6,16 @@ const tasks = [
 
 ];
 
-function newTask(text) {
+let exsists = 0;
+
+function newTask(text){
     tasks.push({
-        id: tasks.length + 1,
+        id: exsists,
         text: text,
         completed: false,
-    })
+    }); 
+    exsists++;
+    console.log(exsists);
 };
 
 function inputNormaliser() {
