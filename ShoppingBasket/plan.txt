@@ -1,1 +1,23 @@
 The Plan:
+
+1. I will create the html elements that will not change.
+add the Items names and thier prices and buttons next to it.
+the Total tag etc.
+and the button to clear cart.
+
+2.I will create an object with the items names and prices.
+Clicking the add to cart button will push the items into an array
+or a new object called basket where the item will be key and 
+amount of items and total are stored.
+
+3.i will use the basket itself to show the data in the screen.
+each time an item was added to basked and has quantity greater than 0
+a remove button also gets added to the item shown in basket section
+
+4.Get total overall from the items in cart.
+The total will be shown on screen.
+
+5. this remove button will decrement the basket by one, once the items
+reach 0 they will be removed from the cart.
+
+6. the clear button deletes all items in basket.
