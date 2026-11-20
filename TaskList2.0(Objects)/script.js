@@ -18,17 +18,24 @@ function inputNormaliser() {
     return taskInput.value.trim();
 };
 
-function remove() {
-    console.log(`removing`);
-};
-
 function createDelBtn(i) {
     const delBtn = document.createElement(`button`);
         delBtn.innerText = `Delete`;
         delBtn.setAttribute(`id`, `${tasks[i].id}`);
-    delBtn.addEventListener(`click`, remove)
+    delBtn.addEventListener(`click`, (e) => {
+        let test = parseInt(e.target.id);
+        for (let i = 0; i < tasks.length; i++) {
+            if (tasks[i].id === test) {
+                tasks.splice(i, 1);
+                console.log(parseInt(e.target.id))
+                break;
+            }
+        };
+        renderTasks();
+        console.table(tasks);
+    });
     return delBtn;
-}
+};
 
 function renderTasks() {
     taskList.innerText = ``;
