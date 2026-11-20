@@ -15,6 +15,15 @@ function newTask(text) {
     })
 };
 
-newTask(`Cook Food`);
-newTask(`Eat Out`);
-console.log(tasks);
+function inputNormaliser() {
+    return taskInput.value.trim();
+};
+
+addTask.addEventListener(`click`, () => {
+    inputNormaliser();
+    if (inputNormaliser() !== ``) {
+        newTask(inputNormaliser());
+        console.log(tasks);
+    };
+});
+
