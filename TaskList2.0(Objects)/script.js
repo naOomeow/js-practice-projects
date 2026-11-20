@@ -27,7 +27,10 @@ function renderTasks() {
         
         const delBtn = document.createElement(`button`);
         delBtn.innerText = `Delete`;
-        delBtn.setAttribute(`id`, `delete-${tasks[i].id}`);
+        delBtn.setAttribute(`id`, `btn${tasks[i].id}`);
+        delBtn.addEventListener(`click`, (e) => {
+            console.log(`deleting`);
+        });
 
         taskList.appendChild(li);
         li.appendChild(delBtn);
@@ -38,7 +41,7 @@ addTask.addEventListener(`click`, () => {
     inputNormaliser();
     if (inputNormaliser() !== ``) {
         newTask(inputNormaliser());
-        console.log(tasks);
+        console.table(tasks);
     };
     taskInput.value = ``;
     renderTasks();
