@@ -13,7 +13,7 @@ const sellingItems = [
     
 ];
 
-const basket = [
+let basket = [
 
 ];
 
@@ -48,7 +48,21 @@ function getTotal() {
     }, [])
 }
 
+function updateDisplay() {
+    let groupedBasket = getTotal();
+
+    basketContent.innerHTML = ``;
+
+    for (let i = 0; i < groupedBasket.length; i++) {
+        const p = document.createElement(`p`);
+
+        p.textContent = `${groupedBasket[i].item} - Quantity: ${groupedBasket[i].count} - Total: $${groupedBasket[i].total}`;
+
+        basketContent.appendChild(p);
+    }
+}
+
 Buttons.forEach((button) => button.addEventListener(`click`, (e) => {
     ADD_BUTTON(e);
-    console.log(getTotal());
+    updateDisplay();
 }));
