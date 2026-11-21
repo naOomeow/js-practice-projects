@@ -1,8 +1,10 @@
 const basketContent = document.querySelector(`#basket`);
-const addApple = document.querySelector(`#addApple`);
-const addBanana = document.querySelector(`#addBanana`);
-const addOrange = document.querySelector(`#addOrange`);
+const addApple = document.querySelector(`#Apple`);
+const addBanana = document.querySelector(`#Banana`);
+const addOrange = document.querySelector(`#Orange`);
 const clearBtn = document.querySelector(`#clear`);
+
+let Buttons = [addApple, addBanana, addOrange];
 
 const sellingItems = [
     { item: `Apple`, price: 2 },
@@ -14,3 +16,9 @@ const sellingItems = [
 const basket = [
 
 ];
+
+function ADD_BUTTON(e) {
+    console.log(`clicked` + ` ` + e.target.id);
+};
+
+Buttons.forEach((button) => button.addEventListener(`click`, ADD_BUTTON));
